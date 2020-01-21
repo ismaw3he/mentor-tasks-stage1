@@ -6,7 +6,7 @@ class Task {
                 header="",
                 description="",
                 dueDate="",
-                taskId=Math.random()
+                taskId=Math.random() //bad practice! If you want to generate ID - use separate class/constructor for that. Because you never know if it will be the same sometime. And by the way this method return you values from 0 to 1....seems maximum level of unsafe
     ) {
         this.category=category;
         this.label=label;
@@ -20,8 +20,8 @@ class Task {
         let task=document.createElement("div");
         task.setAttribute("class","task");
         task.draggable=true;
-        task.setAttribute("ondragstart","this,drag(event)");
-
+        task.setAttribute("ondragstart","this,drag(event)"); //it can be assigned by using a property of the task that you have by default. And I thing that string value isn't best idea. I suppose that you are taking this thing as an argument somewhere, but code like that is a bit hard to debug.
+        
         task.id=this.taskId.toString();
 
         let color=document.createElement("div");
@@ -51,11 +51,16 @@ class Task {
         dueDate.setAttribute("class","task-due-date");
         dueDate.innerText=this.dueDate.toString();
         time.appendChild(dueDate);
+        
+        /* all the items above simply can be created as a class fields */
 
 
         let deleteContainer=document.createElement("div");
         deleteContainer.addEventListener("click",function (event) {
             window.event.cancelBubble = true
+            /**
+             * this is kinda bad to use global variables...what if the name will happen, of even you will try to use this peace of code in different project?
+             */
             categories[event.target.closest(".card").id]=
                 categories[event.target.closest(".card").id].
                 filter((item)=>item.taskId.toString()!==event.target.closest(".task").id);
@@ -88,7 +93,7 @@ let categories={
 };
 //**************************************************************************************************
 //Loading content from local storage
-let retrievedObject = localStorage.getItem('categories');
+let retrievedObject = localStorage.getItem('categories'); //it'll be better to move your if from 96 line here. The code became more readable.
 
 if(JSON.parse(retrievedObject)){
     categories=JSON.parse(retrievedObject);
@@ -125,6 +130,7 @@ addSubmit.addEventListener("click",()=>{
     }
     else{
         let editingItem=categories[editingTask.closest(".card").id].find((item)=>editingTask.id===item.taskId.toString());
+        /* could be written using forEach with switch inside of smth like that */
         editingItem.label=editingTask.childNodes[0].style.backgroundColor=label;
         editingItem.header=editingTask.childNodes[1].innerText=header;
         editingItem.description=editingTask.childNodes[2].innerText=description;
@@ -134,6 +140,7 @@ addSubmit.addEventListener("click",()=>{
     localStorage.setItem('categories', JSON.stringify(categories));
 });
 
+/* try to use only one event listener for your future projects. Improve this skill. Because having less number of listener is always better for the page speed */
 buttons.forEach(btn=>{
     btn.onclick = function(event) {
         modalCreate=true;
