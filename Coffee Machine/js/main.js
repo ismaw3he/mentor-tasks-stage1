@@ -1,4 +1,4 @@
-let Drink = function (name, price, coffee, milk, sugar, water, cup) {
+let Drink = function (name, price, coffee, milk, sugar, water, cup) { //would be better to add one property - supplies as an object that keeps information bout
     this.name = name;
     this.price = price;
     this.coffee = coffee;
@@ -23,7 +23,7 @@ let Machine = function (name, date, owner, repairs) {
     this.repairs = repairs;
 };
 
-let CoffeeMachine = function (name, date, owner, repairs, supplies, drinks, picture, elements) {
+let CoffeeMachine = function (name, date, owner, repairs, supplies, drinks, picture, elements) { //how about to repair all the properties for Machine constructor into one property like elements and call it info
     Machine.call(this, name, date, owner, repairs);
     this.supplies = supplies;
     this.drinks = drinks;
