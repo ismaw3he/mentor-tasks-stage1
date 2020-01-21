@@ -1,0 +1,50 @@
+@media only screen and (max-width: 980px) {
+    .modal-content {
+        width: 50%;
+    }
+    *{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    *{
+        font-size: 10px;
+    }
+    .modal-content {
+        width: 70%;
+    }
+    .input-sections{
+        margin: 10px 0;
+    }
+    .close {
+        font-size: 20px;
+    }
+    #submit-button {
+        height: 30px;
+        margin: 10px auto 0 auto;
+        font-size: 10px;
+    }
+    .task{
+        width: 80%;
+    }
+    .card {
+        margin-top: 10px;
+        width: 23vw;
+    }
+}
+@media only screen and (max-width: 490px) {
+   *{
+       font-size: 15px;
+   }
+    #main-section {
+        align-items: center;
+        flex-direction: column;
+    }
+    .card {
+        width: 90vw;
+    }
+    .task{
+        width: 90%;
+        margin: 10px auto;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function declaration, Functional Expressions, Destructuring</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+    <div class="machine-container">
+        <h2>CoffeeMachine with Prototype</h2>
+        <img id="proto-img" alt="proto">
+        <form id="proto-coffee">
+            <label for="proto-coffee-types">
+                Select a Drink
+            </label><select name="" id="proto-coffee-types">
+            <option disabled selected value> Choose Drink</option>
+            <option value="espresso">Espresso</option>
+            <option value="cappuccino">Cappuccino</option>
+            <option value="frappuchino">Frappuchino</option>
+            <option value="latte">Latte</option>
+        </select>
+            <label for="proto-coffee-fund">
+                Input money
+            </label><input id="proto-coffee-fund" type="number">
+            <input id="proto-coffee-submit" type="submit" value="Buy" disabled>
+        </form>
+    </div>
+
+    <div id="separator"></div>
+
+    <div class="machine-container">
+        <h2>Class Based Coffee Machine with AJAX</h2>
+        <img id="class-img" alt="classCoffee">
+
+        <form id="class-coffee">
+            <label for="class-coffee-types">
+                Select a Drink
+            </label>
+            <select name="" id="class-coffee-types">
+                <option disabled selected value> Choose Drink</option>
+                <option value="espresso">Espresso</option>
+                <option value="cappuccino">Cappuccino</option>
+                <option value="frappuchino">Frappuchino</option>
+                <option value="latte">Latte</option>
+            </select>
+            <input id="class-coffee-fund" type="number">
+            <label for="class-coffee-fund">
+                Input money
+            </label>
+            <input id="class-coffee-submit" type="submit" value="Buy" disabled>
+        </form>
+
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

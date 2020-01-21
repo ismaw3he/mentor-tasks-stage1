@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="fontawesome-free-5.12.0-web/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+    <title>Document</title>
+</head>
+<body>
+<div id="full-window">
+    <div id="main-section">
+        <div class="card" id="backlog" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2 class="card-header">Backlog</h2>
+            <div class="add-card-btn">
+                <p>Add a card</p>
+                <p>+</p>
+            </div>
+        </div>
+        <div class="card" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>To Do</h2>
+            <div class="add-card-btn">
+                <p>Add a card</p>
+                <p>+</p>
+            </div>
+        </div>
+        <div class="card" id="progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>In Progress</h2>
+            <div class="add-card-btn">
+                <p>Add a card</p>
+                <p>+</p>
+            </div>
+        </div>
+        <div class="card" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2>Done</h2>
+            <div class="add-card-btn">
+                <p>Add a card</p>
+                <p>+</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="task-adder" action="">
+
+                <div id="input-select" class="input-sections">
+                    <label for="category">Category</label>
+                    <select id="category" form="task-adder">
+                        <option id="option-backlog" value="backlog">Backlog</option>
+                        <option id="option-todo" value="todo">To Do</option>
+                        <option id="option-progress" value="progress">In Progress</option>
+                        <option id="option-done" value="done">Done</option>
+                    </select>
+                </div>
+
+
+
+                <div class="input-sections">
+                    <label for="color-picker">Label</label>
+                    <input id="color-picker" type="color">
+                </div>
+
+
+                <div class="input-sections">
+                    <label for="header-input">Header</label>
+                    <input id="header-input" type="text" placeholder="Header">
+                </div>
+
+
+                <div class="input-sections">
+                    <label for="description-input">Description</label>
+                    <textarea id="description-input"></textarea>
+                </div>
+
+
+                <div class="input-sections">
+                    <label for="date-input">Due Date:</label>
+                    <input id="date-input" type="date">
+                </div>
+
+
+                <div id="submit-button">SAVE</div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
